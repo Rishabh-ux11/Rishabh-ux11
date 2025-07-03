@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+SWAPPING VARIABLES WITH TEMP
+int main(){
+    int a = 5;
+    int b = 10;
+    int temp;
+  printf("before swapping: a= %d,b=%d \n",a,b);
+    
+    temp = a;
+   a = b;
+    b = temp;
+    
+    printf("after swapping: a=%d,b=%d \n",a,b);
+}
+
+SWAPPING VARIABLES WITHOUT TEMP
+
+
+int main(){
+    int a = 15;
+    int b = 10;
+    printf("before swapping: a=%d,b=%d \n",a,b);
+    
+    a = a+b;
+    b = a-b;
+    a = a-b;
+    
+    printf("after swapping: a=%d,b=%d \n", a,b);
+}

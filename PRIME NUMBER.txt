@@ -1,0 +1,27 @@
+PRIME NUMBER
+
+#include <stdio.h>
+#include <stdbool.h>
+bool isPrime (int a){
+    for (int i=2;i<a;i++)
+   
+   {
+        if (a % i == 0){
+            return false;
+        }
+    }
+        return true;
+    
+}
+int main(){
+    int num;
+    scanf("%d",&num);
+    bool ans= isPrime(num);
+    if(ans == true){
+    printf("The number is prime\n");
+    }
+    else{
+    printf("The number is not prime\n");
+    }
+    return 0;
+}
