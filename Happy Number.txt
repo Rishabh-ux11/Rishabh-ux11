@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int sum(int n) {
+    int s = 0;
+    while (n) {
+        s += (n % 10) * (n % 10);
+        n /= 10;
+    }
+    return s;
+}
+
+int isHappy(int n) {
+    int slow = n, fast = n;
+    do {
+        slow = sum(slow);
+        fast = sum(sum(fast));
+    } while (fast != 1 && slow != fast);
+    return fast == 1;
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf(isHappy(n) ? "Happy Number\n" : "Not a Happy Number\n");
+    return 0;
+}

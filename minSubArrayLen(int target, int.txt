@@ -1,0 +1,23 @@
+int minSubArrayLen(int target, int* nums, int numsSize) {
+    int left = 0;
+    int total = 0;
+    int minlength = INT_MAX;
+
+    for(int right = 0; right<numsSize; right++){
+        total += nums[right];
+
+        while(total>=target){
+            int currentlength = right - left+1;
+            if(currentlength < minlength){
+                minlength = currentlength;
+            }
+
+            total -= nums[left];
+            left++;
+
+        }
+    }
+
+    return (minlength == INT_MAX)?0:minlength;
+
+}
